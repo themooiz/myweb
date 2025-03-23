@@ -3,50 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Under Construction</title>
+    <title>Under Construction</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #d1d1d1, #e1e1e1); /* Aluminum gradient background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 50px; 
         }
-
-        .container {
-            text-align: center;
-            position: relative;
+        p { 
+            font-size: 12px; /* Even smaller font size for the @bymu1z text */
+            position: absolute; 
+            top: 20px; /* Moved it a bit lower to avoid being too close to the top border */
+            left: 50%; 
+            transform: translateX(-50%); 
+            color: #555; /* Slightly gray to make it subtle */
         }
-
-        #header-text {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #333;
-            margin-top: 50px; /* Adjusts position from the top */
+        h1 { 
+            text-transform: uppercase; 
+            font-size: 48px; /* Larger text size */
+            font-weight: bold; 
+            position: absolute; 
+            top: 30%; /* Adjusted to move the text further down */
+            left: 50%; 
+            transform: translateX(-50%); 
+            white-space: nowrap; /* Ensure the text stays on one line */
         }
-
-        #construction-image {
-            width: 150px; /* Image size */
-            margin-left: 100px; /* Moves the image 100px to the right */
-        }
-
-        #author {
-            position: absolute;
-            top: 10px; /* Moves the @bymu1z text down from the top */
-            left: 10px;
-            font-size: 0.8em;
-            color: #333;
+        img { 
+            width: 300px; /* Adjusted image width */
+            height: auto; /* Automatically adjusts height to keep proportions */
+            margin-top: 50px; /* Reduced margin to bring the image closer to the text */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="author">@bymu1z</div>
-        <div id="header-text">Website Under Construction</div>
-        <img id="construction-image" src="construction-crane-isolated-on-background-3d-rendering-illustration-free-png.webp" alt="construction crane">
-    </div>
+    <p>@bymu1z</p> <!-- Made @bymu1z even smaller and positioned it lower -->
+    <h1>Website Under Construction</h1>
+    <img src="construction-crane-isolated-on-background-3d-rendering-illustration-free-png.webp" alt="Under Construction">
 </body>
 </html>
