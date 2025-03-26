@@ -32,29 +32,13 @@
 
         /* Image styling */
         img { 
-            width: 50%; /* Smaller image size */
-            max-width: 200px; /* Further reduce size */
+            width: 80%; /* Restore original image size */
+            max-width: 300px; /* Ensures it doesn't get too large */
             height: auto;
             position: relative;
-            left: -20px;
+            left: -50px;
             opacity: 0;
             animation: fadeIn 2s ease-in-out forwards;
-        }
-
-        /* Animated Loader Character */
-        .loader {
-            width: 50px;
-            height: 50px;
-            background: black;
-            border-radius: 5px;
-            position: absolute;
-            bottom: 50px;
-            animation: bounce 1s infinite alternate ease-in-out;
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-20px); }
         }
 
         /* Keyframe animations */
@@ -70,8 +54,8 @@
             }
 
             img { 
-                width: 40%; /* Slightly reduce image size */
-                left: -10px;
+                width: 70%; /* Slightly reduce image size */
+                left: -30px;
             }
         }
 
@@ -81,8 +65,8 @@
             }
 
             img { 
-                width: 35%; /* Further reduce image size */
-                left: -5px;
+                width: 60%; /* Further reduce image size */
+                left: -20px;
             }
         }
     </style>
@@ -90,6 +74,5 @@
 <body>
     <h1>Website Under Construction</h1>
     <img src="construction-crane-isolated-on-background-3d-rendering-illustration-free-png.webp" alt="Under Construction">
-    <div class="loader"></div>
 </body>
 </html>
