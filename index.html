@@ -17,6 +17,7 @@
             align-items: center;
             height: 100vh;
             background: linear-gradient(135deg, #b8b8b8, #d0d0d0);
+            overflow: hidden;
         }
 
         /* Styling for the header */
@@ -25,6 +26,8 @@
             font-size: 48px;
             font-weight: bold; 
             margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
         }
 
         /* Image styling */
@@ -34,6 +37,20 @@
             height: auto;
             position: relative;
             left: -50px; /* Moves image more to the left */
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1.5s ease-in-out 1s forwards;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive adjustments */
@@ -65,3 +82,4 @@
     <img src="construction-crane-isolated-on-background-3d-rendering-illustration-free-png.webp" alt="Under Construction">
 </body>
 </html>
+
