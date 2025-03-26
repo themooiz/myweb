@@ -37,20 +37,21 @@
             height: auto;
             position: relative;
             left: -50px; /* Moves image more to the left */
-            transform: translateY(50px);
             opacity: 0;
-            animation: slideUp 1.5s ease-in-out 1s forwards;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        /* Simple Dino Game */
+        canvas {
+            position: absolute;
+            bottom: 20px;
+            background: transparent;
         }
 
         /* Keyframe animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive adjustments */
@@ -80,6 +81,46 @@
 <body>
     <h1>Website Under Construction</h1>
     <img src="construction-crane-isolated-on-background-3d-rendering-illustration-free-png.webp" alt="Under Construction">
+    <canvas id="gameCanvas" width="400" height="100"></canvas>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let dino = { x: 50, y: 70, width: 20, height: 20, velocityY: 0, gravity: 0.5, jumping: false };
+        let groundY = 90;
+
+        function drawDino() {
+            ctx.fillStyle = "black";
+            ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+        }
+
+        function updateGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (dino.jumping) {
+                dino.velocityY += dino.gravity;
+                dino.y += dino.velocityY;
+                if (dino.y >= groundY) {
+                    dino.y = groundY;
+                    dino.jumping = false;
+                }
+            }
+            drawDino();
+        }
+
+        function jump() {
+            if (!dino.jumping) {
+                dino.jumping = true;
+                dino.velocityY = -8;
+            }
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "Space") {
+                jump();
+            }
+        });
+
+        setInterval(updateGame, 20);
+    </script>
 </body>
 </html>
-
