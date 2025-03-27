@@ -3,79 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Website Being Built</title>
     <style>
-        /* Apply full-page gradient aluminum background */
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            margin: 0;
-            padding: 0;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #111, #444);
+            color: white;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #b8b8b8, #d0d0d0);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
             overflow: hidden;
-            padding-top: 100px; /* Moves content lower */
         }
-
-        /* Styling for the header */
-        h1 { 
-            text-transform: uppercase; 
-            font-size: 48px;
-            font-weight: bold; 
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-
-        /* Image styling */
-        img { 
-            width: 80%; /* Restore original image size */
-            max-width: 300px; /* Ensures it doesn't get too large */
-            height: auto;
+        .container {
             position: relative;
-            left: -50px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
+            animation: fadeIn 2s ease-in-out;
         }
-
-        /* Keyframe animations */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: moveUp 1.5s ease-in-out;
+        }
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        @keyframes moveUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 { 
-                font-size: 32px; /* Adjust text for smaller screens */
-            }
-
-            img { 
-                width: 70%; /* Slightly reduce image size */
-                left: -30px;
-            }
+        .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(50px);
+            animation: floating 6s infinite alternate ease-in-out;
         }
-
-        @media (max-width: 480px) {
-            h1 { 
-                font-size: 24px; /* Smaller text on very small screens */
-            }
-
-            img { 
-                width: 60%; /* Further reduce image size */
-                left: -20px;
-            }
+        @keyframes floating {
+            from { transform: translateY(-20px) translateX(-20px); }
+            to { transform: translateY(20px) translateX(20px); }
         }
     </style>
 </head>
 <body>
-    <h1>Website Under Construction</h1>
-    <img src="construction-crane-isolated-on-background-3d-rendering-illustration-free-png.webp" alt="Under Construction">
+    <div class="glow"></div>
+    <div class="container">
+        <h1>WEBSITE BEING BUILT</h1>
+        <p>For business inquiries, contact <a href="mailto:me@mydomain.com" style="color: white; text-decoration: none;">me@mydomain.com</a></p>
+    </div>
 </body>
 </html>
-
