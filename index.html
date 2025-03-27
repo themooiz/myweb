@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Pixel Web</title>
+    <title>Website Being Built</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #111, #444);
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
+            overflow: hidden;
         }
         .container {
             position: relative;
-            max-width: 80%;
+            animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: moveUp 1.5s ease-in-out;
         }
-        .statue {
-            width: 200px;
-            height: 200px;
-            background: url('https://example.com/pixel-statue.png') no-repeat center;
-            background-size: cover;
-            filter: contrast(1.2);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInMove 1.8s ease-out forwards 0.5s;
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        @keyframes moveUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes fadeInMove {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(50px);
+            animation: floating 6s infinite alternate ease-in-out;
         }
-        .contact {
-            font-size: 0.8rem;
-            margin-top: 10px;
-            opacity: 0.7;
+        @keyframes floating {
+            from { transform: translateY(-20px) translateX(-20px); }
+            to { transform: translateY(20px) translateX(20px); }
         }
     </style>
 </head>
 <body>
+    <div class="glow"></div>
     <div class="container">
-        <h1>Welcome to My World</h1>
-        <div class="statue"></div>
-        <p class="contact">For inquiries, contact me@mydomain.com</p>
+        <h1>WEBSITE BEING BUILT</h1>
+        <p>For inquiries, contact <a href="mailto:her@bymu1z.com" style="color: white; text-decoration: none;">me@mydomain.com</a></p>
     </div>
 </body>
 </html>
-
