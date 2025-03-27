@@ -3,70 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Pixel Art Website</title>
+    <title>Elegant Pixel Web</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #f4f4f4;
+            overflow: hidden;
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            overflow: hidden;
         }
-
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             position: relative;
+            max-width: 80%;
         }
-
         h1 {
-            font-size: 3rem;
-            color: #333;
+            font-size: 2.5rem;
+            font-weight: 600;
             opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
+            animation: fadeIn 1.5s ease-out forwards;
         }
-
-        .pixel-statue {
+        .statue {
             width: 200px;
             height: 200px;
-            background: url('https://yourpixelstatueimage.com') no-repeat center;
+            background: url('https://example.com/pixel-statue.png') no-repeat center;
             background-size: cover;
+            filter: contrast(1.2);
             opacity: 0;
-            animation: fadeIn 3s ease-in forwards;
+            transform: translateY(20px);
+            animation: fadeInMove 1.8s ease-out forwards 0.5s;
         }
-
-        p {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 10px;
-            opacity: 0;
-            animation: fadeIn 4s ease-in forwards;
-        }
-
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInMove {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .contact {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="pixel-statue"></div>
-        <h1>Your Text Here</h1>
-        <p>For inquiries contact me@mydomain.com</p>
+        <h1>Welcome to My World</h1>
+        <div class="statue"></div>
+        <p class="contact">For inquiries, contact me@mydomain.com</p>
     </div>
 </body>
 </html>
+
