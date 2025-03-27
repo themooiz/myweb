@@ -3,125 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Being Built</title>
+    <title>Elegant Pixel Art Website</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #f4f4f4;
-            color: #000;
-            font-family: 'Courier New', monospace;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
             overflow: hidden;
         }
 
         .container {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            z-index: 2;
         }
 
         h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            position: relative;
-            display: inline-block;
+            font-size: 3rem;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
         }
 
-        .glitch {
-            animation: glitch 1.5s infinite;
+        .pixel-statue {
+            width: 200px;
+            height: 200px;
+            background: url('https://yourpixelstatueimage.com') no-repeat center;
+            background-size: cover;
+            opacity: 0;
+            animation: fadeIn 3s ease-in forwards;
         }
 
-        @keyframes glitch {
-            0% { transform: translate(0, 0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(2px, -2px); }
-            60% { transform: translate(-2px, -2px); }
-            80% { transform: translate(2px, 2px); }
-            100% { transform: translate(0, 0); }
-        }
-
-        .inquiries {
+        p {
             font-size: 0.8rem;
+            color: #666;
             margin-top: 10px;
-            opacity: 0.7;
+            opacity: 0;
+            animation: fadeIn 4s ease-in forwards;
         }
 
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <canvas id="pixelCanvas"></canvas>
     <div class="container">
-        <h1 class="glitch">WEBSITE BEING BUILT</h1>
-        <p class="inquiries">For inquiries contact me@mydomain.com</p>
+        <div class="pixel-statue"></div>
+        <h1>Your Text Here</h1>
+        <p>For inquiries contact me@mydomain.com</p>
     </div>
-
-    <script>
-        const canvas = document.getElementById("pixelCanvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let pixels = [];
-
-        class Pixel {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.size = Math.random() * 5;
-                this.speed = Math.random() * 2 + 1;
-            }
-            draw() {
-                ctx.fillStyle = "black";
-                ctx.fillRect(this.x, this.y, this.size, this.size);
-            }
-            update() {
-                this.y += this.speed;
-                if (this.y > canvas.height) {
-                    this.y = 0;
-                    this.x = Math.random() * canvas.width;
-                }
-            }
-        }
-
-        function initPixels() {
-            for (let i = 0; i < 200; i++) {
-                pixels.push(new Pixel(Math.random() * canvas.width, Math.random() * canvas.height));
-            }
-        }
-
-        function animatePixels() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            pixels.forEach(pixel => {
-                pixel.update();
-                pixel.draw();
-            });
-            requestAnimationFrame(animatePixels);
-        }
-
-        initPixels();
-        animatePixels();
-
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
